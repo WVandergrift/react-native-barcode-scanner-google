@@ -392,7 +392,7 @@ public class BarcodeScannerView extends ViewGroup implements CameraSource.AutoFo
             public void onNewItem(int id, Barcode item) {
                 // Act on new barcode found
                 WritableMap event = Arguments.createMap();
-                event.putString("data", item.displayValue);
+                event.putString("data", item.rawValue);
                 event.putString("type", BarcodeFormat.get(item.format));
 
                 sendNativeEvent(BARCODE_FOUND_KEY, event);
